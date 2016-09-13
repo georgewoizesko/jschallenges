@@ -31,13 +31,22 @@ function getText() {
  * @param {String} text the stuff you want to put in the box
  */
 function setText(text) {
-
-
  return $('#save-me').val(text);
 }
+
+
+/**
+*Sets 'savedText' to whatever is typed in #save-button on clicking the save button.
+*
+*/
 $('#save-button').click(function() {
    localStorage.setItem('savedText', getText());
 })
+
+/**
+*Gets 'savedText' and displays it in "#save-me" on clicking the load button.
+*
+*/
 $('#load-button').click(function() {
    setText(localStorage.getItem('savedText'));
 })
